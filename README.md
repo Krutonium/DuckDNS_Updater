@@ -48,4 +48,10 @@ and
     }
 ```
 
+You can update multiple sites that use the same token by listing them as such:
+```
+"Key": "domain1,domain2",
+```
+
+
 You can have an unlimited number of sites listed. Keep in mind however that if you have for example Hundreds of sites, you may want to increase the time between updates - `"DoUpdateEveryXMinutes": 5,` - so that there is no overlap. It shouldn't cause local issues, other than console spam, but the DuckDNS operators likely wouldn't appreciate it.
