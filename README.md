@@ -55,3 +55,6 @@ You can update multiple sites that use the same token by listing them as such:
 
 
 You can have an unlimited number of sites listed. Keep in mind however that if you have for example Hundreds of sites, you may want to increase the time between updates - `"DoUpdateEveryXMinutes": 5,` - so that there is no overlap. It shouldn't cause local issues, other than console spam, but the DuckDNS operators likely wouldn't appreciate it.
+
+
+In theory, this application should work on all platforms where DotNet Core is supported. In Practice, I can not get it to run on my Arch Linux computer, but it does seem to work fine on Debian distributions. I suspect it may have to do with the systems cURL. More investigation to follow.
