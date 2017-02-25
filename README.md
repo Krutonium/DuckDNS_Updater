@@ -1,6 +1,10 @@
 # DuckDNS Updater
 A simple console application that keeps your DDNS Entry on DuckDNS up to date
 
+This application is supported on any platform where DotNet Core is - Which basically means Linux (Debian/Ubuntu for example), Windows, and Mac OS can all run this application, provided you install the framework.
+
+To actually run the application, extract the latest release, or download the source (`git clone`, `dotnet restore`, `dotnet build`), then simply run `dotnet DuckDNS.dll` to run the application. Running it as a service depends on your Operating System, but generally you will want to make sure only 1 instance is running, and you will need to set your running directory to the directory where your config file is located. This will change at a later date, when I add a command line switch to specify the location of the config file.
+
 Run once to generate your config.json, then edit it, providing values provided by [DuckDNS](https://www.duckdns.org)
 
 The default configuration file is as follows (Messages Removed - They give a brief overview of the config file.):
