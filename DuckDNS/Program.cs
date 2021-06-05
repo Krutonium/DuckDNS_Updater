@@ -38,7 +38,7 @@ namespace DuckDNS
             }
             Console.WriteLine("Scheduling Automatic Updates every " + set.DoUpdateEveryXMinutes + " Minutes.");
 
-            var tmr = new Timer(TimedUpdate(), null, 0, set.DoUpdateEveryXMinutes * 1000); //Update the DNS names every 5 minutes. Minutes*1000=Minutes in Milliseconds. Runs Immediatly.
+            var tmr = new Timer(TimedUpdate, null, 0, set.DoUpdateEveryXMinutes * 1000 * 60); //Update the DNS names every 5 minutes. Minutes*1000=Minutes in Milliseconds. Runs Immediatly.
             
             Console.WriteLine("Console Ready. type \"help\" for help");
             do
@@ -52,11 +52,11 @@ namespace DuckDNS
             } while (true);
         }
 
-        private static TimerCallback TimedUpdate()
+        private static void TimedUpdate(object dummy)
         {
             Console.WriteLine("Executing Automatic IP Update...");
             ForceUpdate();
-            return delegate { };
+            return;
         }
 
         static void PrintHelp()
